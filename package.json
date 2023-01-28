@@ -9,11 +9,11 @@
     "lint": "./node_modules/.bin/eslint . --ext .js,.jsx,.ts,.tsx",
     "lint-fix": "./node_modules/.bin/eslint . --ext .js,.jsx,.ts,.tsx --fix",
     "prepare": "npx husky install",
-    "start": "NODE_PATH=./dist node dist/server.js",
-    "start-ts": "NODE_PATH=./src NODE_ENV=dev nodemon src/server.ts",
-    "start-dev": "NODE_ENV=dev npm run start",
-    "start-stg": "NODE_ENV=stg npm run start",
-    "start-prd": "NODE_ENV=prd npm run start"
+    "start": "cross-env NODE_PATH=./dist node dist/server.js",
+    "start-ts": "cross-env NODE_PATH=./src NODE_ENV=dev nodemon src/server.ts",
+    "start-dev": "cross-env NODE_ENV=dev npm run start",
+    "start-stg": "cross-env NODE_ENV=stg npm run start",
+    "start-prd": "cross-env NODE_ENV=prd npm run start"
   },
   "pre-commit": [
     "lint-fix"
@@ -57,6 +57,7 @@
     "cookie-parser": "^1.4.5",
     "copyfiles": "^2.4.1",
     "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
     "dotenv": "^10.0.0",
     "dotenv-safe": "^8.2.0",
     "express": "^4.17.1",
